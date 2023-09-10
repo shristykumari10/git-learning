@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+       
+    </header>
+
+    <script>
+
+const myPromise = new Promise((resolve, reject) => {
+  // Asynchronous operation
+
+  let x=true
+  if (x==true) {
+    setTimeout(()=>{
+        resolve('Success data');
+    })
+    
+  } else {
+    reject('Error message');
+  }
+});
+
+myPromise
+  .then((data) => {
+    console.log('Promise resolved with data:', data);
+    // Handle success here
+  })
+  .catch((error) => {
+    console.error('Promise rejected with error:', error);
+    // Handle error here
+  });
+
+  fetch("https://jsonplaceholder.typicode.com/users").then((content)=>{
+    let jsonData = content.json()
+    console.log(jsonData)
+    return jsonData
+  })
+  .then((resp)=>{
+    console.log(resp);
+  })
+
+  
+
+    </script>
+    <script src="fun.js">
+
+
+    </script>
+
+</body>
+</html>
